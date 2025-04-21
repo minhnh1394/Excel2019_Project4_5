@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&lng=en-US by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Oct 2018 20:00:56 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IIG Training</title>
+    <link rel="stylesheet" href="Styles/style.css" />
+    <link rel="stylesheet" href='Styles/ProjectV2.css' />
+
+
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <form method="post"
+        action="http://www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&amp;lng=en-US"
+        id="frmQuestion">
+
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9A7FEFD0" />
+        </div>
+
+        <script type="text/javascript">
+
+
+
+            var currentScrollLocation;
+            function ToggleNavigation(elem, ToShow) {
+                if (ToShow == "divSample" || ToShow == "divVideo") {
+                    currentScrollLocation = $(document).scrollTop();
+                    $(document).scrollTop(0);
+                }
+                $(".NavigationSpan").removeClass("tabselected");
+                $(elem).addClass("tabselected");
+                $(".ContentDiv").hide();
+                $("#" + ToShow).show();
+                if (ToShow == "divInstructions") {
+                    $(document).scrollTop(currentScrollLocation);
+                }
+            }
+            $(document).ready(function () {
+
+
+
+
+                try { // hide all programming words
+
+
+                    $('p').filter(':contains("|EndRedWords|")').hide();
+                    $('[color="#ff0000"]').hide();
+
+
+                    $('font').removeAttr('color');
+
+                    $('strong').removeAttr('style');
+                    $('div[dir="rtl"]').addClass('displayInline');
+
+
+                } catch (e) { }
+                try {
+                    $(".HelpButton").each(function () {
+                        $(this).css("display", "inline"); //Hides lightbulb image if test is in testing mode.
+                        $(this).attr("src", "Images/Tip_02.png");
+                        $(this).attr("width", "16px");
+                        $(this).attr("height", "16px");
+                        $(this).attr("alt", "help");
+                        $(this).attr("title", "Click to toggle help");
+
+                        var currentclick = $(this).attr("onclick");
+                        var newclick = currentclick.replace(")", ", this.parentElement.parentElement)");
+                        $(this).attr("onclick", newclick);
+
+                    });
+                } catch (e) { }
+
+
+
+                GetSavedValues();
+                $.each(CheckedValues, function (index, value) {
+                    $('#' + value).prop('checked', true);
+                    $(".Nav" + value).addClass("navselected");
+
+
+
+                });
+            });
+
+            var CheckedValues = [];
+            function GetSavedValues() {
+                //CheckedValues = ["181464","181480"];
+                try {
+                    //stringy = stringy.replace(/\s/g, '');
+
+                    CheckedValues = projectTestCallbackObject.getSavedValues().replace(/\s/g, '').split(',');
+                } catch (e) { }
+            }
+            function SetSavedValues() {
+                //alert(CheckedValues.join(","));
+                try {
+                    projectTestCallbackObject.setSavedValues(CheckedValues.join(","));
+                } catch (e) { }
+            }
+
+            function handleClick(cb) {
+
+
+                if (cb.checked == true) {
+                    $(".Nav" + cb.id).addClass("navselected");
+                    var i = CheckedValues.indexOf(cb.id);
+                    if (i != -1) {
+                        CheckedValues.splice(i, 1);
+                    } // remove first to handle duplicates
+                    CheckedValues.push(cb.id);
+                }
+                else {
+                    $(".Nav" + cb.id).removeClass("navselected");
+                    var ix = CheckedValues.indexOf(cb.id);
+                    if (ix != -1) {
+                        CheckedValues.splice(ix, 1);
+                    }
+                }
+                SetSavedValues();
+            }
+
+
+            function ToggleElement(id, ParentLocation) {
+                $(ParentLocation).find(".help" + id).toggle();
+            }
+
+
+            function LaunchInWindow(uri) {
+                projectTestCallbackObject.launchInWindow(uri);
+            }
+
+        </script>
+        <div class="NavigationContainer">
+
+
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#01'>
+                    Project1
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task1'>
+                    1.
+                    <span><span>Task 1</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task2'>
+                    2.
+                    <span><span>Task 2</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task3'>
+                    3.
+                    <span><span>Task 3</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task4'>
+                    4.
+                    <span><span>Task4</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task5'>
+                    5.
+                    <span><span>Task5</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task6'>
+                    6.
+                    <span><span>Task6</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task7'>
+                    7.
+                    <span><span>Task7</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task8'>
+                    8.
+                    <span><span>Task8</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#02'>
+                    Project2
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task9'>
+                    9.
+                    <span><span>Task 9</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task10'>
+                    10.
+                    <span><span>Task 10</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task11'>
+                    11.
+                    <span><span>Task 11</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task12'>
+                    12.
+                    <span><span>Task12</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task13'>
+                    13.
+                    <span><span>Task13</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task14'>
+                    14.
+                    <span><span>Task14</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task15'>
+                    15.
+                    <span><span>Task15</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task16'>
+                    16.
+                    <span><span>Task16</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#03'>
+                    Project3
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task17'>
+                    17.
+                    <span><span>Task 17</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task18'>
+                    18.
+                    <span><span>Task 18</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task19'>
+                    19.
+                    <span><span>Task 19</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task20'>
+                    20.
+                    <span><span>Task20</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task21'>
+                    21.
+                    <span><span>Task21</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task22'>
+                    22.
+                    <span><span>Task22</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task23'>
+                    23.
+                    <span><span>Task23</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task24'>
+                    24.
+                    <span><span>Task24</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#04'>
+                    Project4
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task25'>
+                    25.
+                    <span><span>Task 25</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task26'>
+                    26.
+                    <span><span>Task 26</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task27'>
+                    27.
+                    <span><span>Task 27</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task28'>
+                    28.
+                    <span><span>Task28</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task29'>
+                    29.
+                    <span><span>Task29</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task30'>
+                    30.
+                    <span><span>Task30</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task31'>
+                    31.
+                    <span><span>Task31</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task32'>
+                    32.
+                    <span><span>Task32</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#05'>
+                    Project5
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task33'>
+                    33.
+                    <span><span>Task 33</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task34'>
+                    34.
+                    <span><span>Task 34</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task35'>
+                    35.
+                    <span><span>Task 35</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task36'>
+                    36.
+                    <span><span>Task36</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task37'>
+                    37.
+                    <span><span>Task37</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task38'>
+                    38.
+                    <span><span>Task38</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task39'>
+                    39.
+                    <span><span>Task39</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task40'>
+                    40.
+                    <span><span>Task40</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#06'>
+                    Project6
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task41'>
+                    41.
+                    <span><span>Task 41</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task42'>
+                    42.
+                    <span><span>Task 42</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task43'>
+                    43.
+                    <span><span>Task 43</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task44'>
+                    44.
+                    <span><span>Task44</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task45'>
+                    45.
+                    <span><span>Task45</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task46'>
+                    46.
+                    <span><span>Task46</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task47'>
+                    47.
+                    <span><span>Task47</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task48'>
+                    48.
+                    <span><span>Task48</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#07'>
+                    Project7
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task49'>
+                    49.
+                    <span><span>Task 49</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task50'>
+                    50.
+                    <span><span>Task 50</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task51'>
+                    51.
+                    <span><span>Task 51</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task52'>
+                    52.
+                    <span><span>Task52</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task53'>
+                    53.
+                    <span><span>Task53</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task54'>
+                    54.
+                    <span><span>Task54</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task55'>
+                    55.
+                    <span><span>Task55</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task56'>
+                    56.
+                    <span><span>Task56</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#08'>
+                    Project8
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task57'>
+                    57.
+                    <span><span>Task 57</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task58'>
+                    58.
+                    <span><span>Task 58</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task59'>
+                    59.
+                    <span><span>Task 59</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task60'>
+                    60.
+                    <span><span>Task60</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task61'>
+                    61.
+                    <span><span>Task61</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task62'>
+                    62.
+                    <span><span>Task62</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task63'>
+                    63.
+                    <span><span>Task63</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task64'>
+                    64.
+                    <span><span>Task64</span></span>
+                </a>
+            </div>
+
+
+        </div>
+        <!-- Nội dung-->
+        <div class="instructionContainer">
+
+            <div id="divInstructions" class="ContentDiv">
+                <div id="GmxTable" style="padding-top: 30px;">
+
+
+
+
+                    <br style="clear: both;" />
+
+                    <div class="container">
+                        <a name='01' class="Anchor">&nbsp;</a>
+                        
+                        <!-- Bắt đầu 1 câu -->
+                        <h2><a href="Excel - Project 01.xlsx">Project 1</a></h2>
+
+                        
+                        <br style="clear: both" />
+
+                        <a name='task5' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='task5' onclick='handleClick(this);' />
+                            5. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Move Chart to New Sheet</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>Từ trang tính “Enrollment”, chuyển biểu đồ sang trang tính biểu đồ (chart
+                                            sheet) mới có tên “Enrollment Chart”.</p>
+                                    </span></div>
+                            </div>
+                        </div>
+                        <br style="clear: both" />
+
+                        <a name='task6' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='task6' onclick='handleClick(this);' />
+                            6. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Change Chart Axis Title</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>Trên trang tính “Instructional Hours”, hãy sửa biểu đồ để hiển thị “Hours”
+                                            làm Primary Vertical Axis Title.</p>
+                                    </span></div>
+                            </div>
+                        </div>
+                        <br style="clear: both" />
+                        <h2><a href="Excel - Project 02.xlsx">Project 2</a></h2>
+
+                        
+
+                        <a name='task11' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='task11' onclick='handleClick(this);' />
+                            11. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Create Clustered Column Chart</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>Trên trang tính “Next Semester”, tạo biểu đồ Clustered Column hiển thị tên
+                                            “Program” và dữ liệu “Average Cost per Student”. Đặt biểu đồ vào bên phải
+                                            bảng. Vị trí và kích thước chính xác của biểu đồ là không quan trọng.</p>
+                                    </span></div>
+                            </div>
+                        </div>
+                        <br style="clear: both" />
+
+                        <a name='task12' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='task12' onclick='handleClick(this);' />
+                            12. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Apply Chart Style</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>Trên trang tính “Enrollment Summary”, hãy áp dụng kiểu biểu đồ Style 7 và màu
+                                            Monochromatic Palette 6 cho biểu đồ.</p>
+                                    </span></div>
+                            </div>
+                        </div>
+                        <br style="clear: both" />
+
+</body>
+
+</html>
+<h2><a href="Excel - Project 03.xlsx">Project 3</a></h2>
+
+
+<br style="clear: both" />
+
+<a name='task15' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task15' onclick='handleClick(this);' />
+    15. </span>
+<div class="Instruction">
+    <div class="Title"><span>Multiply Using Named Range</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Projections”, trong cột “Quarter 2”, hãy nhập công thức để nhân giá trị trong cột
+                    “Quarter 1” với phạm vi (range) có tên “Q2_Increase”. Dùng tên phạm vi này trong công thức thay vì
+                    tham chiếu ô hoặc giá trị.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task16' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task16' onclick='handleClick(this);' />
+    16. </span>
+<div class="Instruction">
+    <div class="Title"><span>Find Maximum Value</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Summary”, trong ô M5, hãy dùng một hàm (function) để hiển thị mức doanh số lớn nhất
+                    từ cột “Total Sales”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task17' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task17' onclick='handleClick(this);' />
+    17. </span>
+<div class="Instruction">
+    <div class="Title"><span>Swap Data Over Axis</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Comparison”, hoán đổi dữ liệu theo trục (swap the data over the axis) của biểu đồ Sales by Month.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 04.xlsx">Project 4</a></h2>
+
+
+<br style="clear: both" />
+
+<a name='task21' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task21' onclick='handleClick(this);' />
+    21. </span>
+<div class="Instruction">
+    <div class="Title"><span>Sum Named Ranges</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Grade Criteria”, trong ô B18, nhập công thức để cộng tổng giá trị trong phạm vi
+                    (ranges) “Total1”, “Total2” và “Total3”. Dùng tên phạm vi trong công thức thay vì tham chiếu ô hoặc
+                    giá trị.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task22' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task22' onclick='handleClick(this);' />
+    22. </span>
+<div class="Instruction">
+    <div class="Title"><span>Identify Missing Exam Results</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Exams”, trong ô E35, dùng hàm (function) để xác định số lượng sinh viên không có kết
+                    quả “Exam 3”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task23' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task23' onclick='handleClick(this);' />
+    23. </span>
+<div class="Instruction">
+    <div class="Title"><span>Remove Legend and Show Data Labels</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính biểu đồ “Score Distribution”, xóa chú giải (legend) và chỉ hiển thị những giá trị
+                    dùng làm nhãn dữ liệu (data label) phía trên mỗi cột.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 05.xlsx">Project 5</a></h2>
+
+
+<br style="clear: both" />
+
+<a name='task27' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task27' onclick='handleClick(this);' />
+    27. </span>
+<div class="Instruction">
+    <div class="Title"><span>Count Inactive Months</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “New Policies”, trong cột “Inactive Months”, hãy dùng hàm (function) để đếm số tháng
+                    không có hợp đồng mới, theo “Agent”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task28' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task28' onclick='handleClick(this);' />
+    28. </span>
+<div class="Instruction">
+    <div class="Title"><span>Create Email Addresses</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Contact”, trong cột “Email Address”, hãy dùng hàm để tạo địa chỉ email cho từng
+                    người bằng cách dùng “First Name” và “@humongousinsurance.com”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task29' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task29' onclick='handleClick(this);' />
+    29. </span>
+<div class="Instruction">
+    <div class="Title"><span>Change Chart Layout</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “New Policies”, thay đổi các phần tử (element) được hiển thị trên biểu đồ bằng cách
+                    thay đổi bố cục biểu đồ (chart layout) thành Layout 3.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 06.xlsx">Project 6</a></h2>
+
+
+<a name='task33' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task33' onclick='handleClick(this);' />
+    33. </span>
+<div class="Instruction">
+    <div class="Title"><span>Find Maximum Value</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “New York City”, trong ô D23, hãy dùng một hàm (function) để hiển thị số lớn nhất từ
+                    cột “Air Miles”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task34' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task34' onclick='handleClick(this);' />
+    34. </span>
+<div class="Instruction">
+    <div class="Title"><span>Create Clustered Column Chart</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “New York City”, tạo biểu đồ Clustered Column để hiển thị “Air Miles” cho tất cả các
+                    thành phố, trong đó thành phố dùng làm nhãn trục ngang (horizontal axis labels). Đặt biểu đồ phía
+                    dưới bảng. Vị trí và kích thước chính xác của biểu đồ là không quan trọng.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task35' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task35' onclick='handleClick(this);' />
+    35. </span>
+<div class="Instruction">
+    <div class="Title"><span>Show Data Table</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “London”, ở biểu đồ “Air Miles”, hiển thị bảng dữ liệu (data table) không có phím chú
+                    giải (legend keys).</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 07.xlsx">Project 7</a></h2>
+
+
+<br style="clear: both" />
+
+<a name='task39' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task39' onclick='handleClick(this);' />
+    39. </span>
+<div class="Instruction">
+    <div class="Title"><span>Calculate Monthly Average</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Key Accounts”, trong cột “Monthly Average”, hãy dùng hàm (function) để tính số dư
+                    trung bình hàng tháng cho mỗi tài khoản từ “January” đến hết “April”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task40' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task40' onclick='handleClick(this);' />
+    40. </span>
+<div class="Instruction">
+    <div class="Title"><span>Create Email Addresses</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Contact”, trong cột “Email Address”, hãy dùng hàm để tạo địa chỉ email cho từng
+                    người bằng cách dùng “First Name” và “@woodgrovebank.com”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task41' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task41' onclick='handleClick(this);' />
+    41. </span>
+<div class="Instruction">
+    <div class="Title"><span>Swap Data Over Axis</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “New Accounts”, ở biểu đồ “Account Balances”, hoán đổi dữ liệu theo trục (swap the
+                    data over the axis).</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 08.xlsx">Project 8</a></h2>
+
+
+
+<a name='task44' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task44' onclick='handleClick(this);' />
+    44. </span>
+<div class="Instruction">
+    <div class="Title"><span>Apply Conditional Formula</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “February”, cột “Discount”, dùng hàm (function) để hiển thị “Yes” nếu “Years as
+                    Member” lớn hơn 3. Nếu không, hiển thị “No”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+
+
+<a name='task46' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task46' onclick='handleClick(this);' />
+    46. </span>
+<div class="Instruction">
+    <div class="Title"><span>Add Alt Text to Chart</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Summary”, hãy thêm phần mô tả cho văn bản thay thế (alt text) “Renewal data” vào
+                    biểu đồ.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 09.xlsx">Project 9</a></h2>
+
+
+
+<a name='task50' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task50' onclick='handleClick(this);' />
+    50. </span>
+<div class="Instruction">
+    <div class="Title"><span>Calculate Tax</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Prices”, trong cột “Tax”, hãy nhập công thức để nhân giá trị trong cột “Unit Price”
+                    với ô L2.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task51' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task51' onclick='handleClick(this);' />
+    51. </span>
+<div class="Instruction">
+    <div class="Title"><span>Inventory Notice</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Prices”, trong cột “Inventory Notice”, hãy dùng hàm (function) để hiển thị “Low” nếu
+                    “Inventory Level %” dưới 15%. Còn không, hãy để trống “Inventory Notice”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task52' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task52' onclick='handleClick(this);' />
+    52. </span>
+<div class="Instruction">
+    <div class="Title"><span>Add Chart Title and Data Labels</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính biểu đồ “Inventory”, chèn tiêu đề biểu đồ (chart title) bên trên biểu đồ, trên vùng
+                    vẽ biểu đồ Hiển thị giá trị phần trăm làm nhãn dữ liệu (data label) bên phải mỗi thanh dữ liệu.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 10.xlsx">Project 10</a></h2>
+
+
+
+<a name='task56' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task56' onclick='handleClick(this);' />
+    56. </span>
+<div class="Instruction">
+    <div class="Title"><span>Calculate Bonus</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Authors”, trong cột “Bonus”, hãy dùng hàm (function) để hiển thị “500” nếu “Books
+                    Sold” lớn hơn 10.000. Nếu không, hiển thị “100”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task57' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task57' onclick='handleClick(this);' />
+    57. </span>
+<div class="Instruction">
+    <div class="Title"><span>Capitalize First Letter</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Sales”, trong cột “City Code”, điều chỉnh công thức để hiển thị chữ cái đầu tiên
+                    thành in hoa.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task58' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task58' onclick='handleClick(this);' />
+    58. </span>
+<div class="Instruction">
+    <div class="Title"><span>Expand Chart Data</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Summary”, mở rộng biểu đồ để bao gồm cả dữ liệu “Current Year”.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+<h2><a href="Excel - Project 11.xlsx">Project 11 </a></h2>
+
+
+
+<a name='task62' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task62' onclick='handleClick(this);' />
+    62. </span>
+<div class="Instruction">
+    <div class="Title"><span>Apply Table Style</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Products”, hãy áp dụng kiểu White, Table Style Medium 1 cho bảng.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task63' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task63' onclick='handleClick(this);' />
+    63. </span>
+<div class="Instruction">
+    <div class="Title"><span>Calculate Projected Value</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Products”, trong cột “Projected Value”, hãy nhập công thức để nhân giá trị trong cột
+                    “Current Value” với phạm vi (range) có tên “Increase”. Dùng tên phạm vi này trong công thức thay vì
+                    tham chiếu ô hoặc giá trị.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+<a name='task64' class="Anchor">&nbsp;</a><br />
+<span class="CBOffset">
+    <input type="checkbox" id='task64' onclick='handleClick(this);' />
+    64. </span>
+<div class="Instruction">
+    <div class="Title"><span>Apply Chart Color</span></div>
+    <div class="Overview">
+        <div class="OverviewItem"><span>
+                <p>Trên trang tính “Summary”, hãy áp dụng màu Colorful Palette 2 cho biểu đồ.</p>
+            </span></div>
+    </div>
+</div>
+<br style="clear: both" />
+
+
+
+<!-- kết thúc 1 câu-->
+
+<br style="clear: both" />
+
+</div>
+
+<br />
+<div class="TestName" style="text-align: center">
+    End of Instructions</div>
+<br />
+</div>
+</div>
+
+
+
+
+</div>
+
+</form>
+</body>
+
+<!-- Mirrored from www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&lng=en-US by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Oct 2018 20:01:29 GMT -->
+
+</html>
